@@ -26,8 +26,8 @@ class Button(object): #button class
     def colourchooser(self): #checks mouseover state and returns appropriate colour
         if self.hover and self.red <= 255 and self.green >=0:
             colour = (self.red, self.green, 0)
-            self.red = self.red + 15
-            self.green = self.green - 15
+            self.red = self.red + 40
+            self.green = self.green - 50
             return colour
         elif self.red >= 255 and self.hover:
             return (255,0,0)
