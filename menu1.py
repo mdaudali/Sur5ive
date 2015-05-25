@@ -12,12 +12,15 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.image.load("1.png").convert()
         self.rect = self.image.get_rect()
         self.state = 1
+        self.x = 0
     def update(self):
         self.state = self.state + 1
-        if self.state > 4:
+        if self.state > 3:
             self.state = 1
+        self.x = self.rect.x
         self.image = pygame.image.load(str(self.state) + ".png").convert()
         self.rect = self.image.get_rect()
+        self.rect.x = self.x + 1
 
 
 size = width, height = 800, 600 # screen size
@@ -61,8 +64,8 @@ while 1:
   #  else:
     #    rocket_state = 0
     #rocket_state = rocket_state + 1
-    all_sprites_list.draw(screen)
     all_sprites_list.update()
+    all_sprites_list.draw(screen)
     pygame.display.flip() # updates screen
 
     #HELLO workld
