@@ -28,13 +28,15 @@ class Button(object): #button class
         if self.hover and reddy != 255:
             global reddy
             global greeny
-            reddy = reddy + 1
-            greeny = greeny - 1
+            reddy = reddy + 5
+            greeny = greeny - 5
             print (reddy, greeny, 0)
             return (reddy, greeny, 0)
+        elif reddy == 255 and self.hover:
+            return (255,0,0)
         else:
-            self.red = 0
-            self.green = 255
+            reddy = 0
+            greeny = 255
             return self.colour
     def draw(self, mouse, screen2): #draws the rectangle
         rectcoords = (self.left, self.top, self.width, self.height) #puts it into pygame appropriate
