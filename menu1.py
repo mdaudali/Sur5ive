@@ -10,7 +10,7 @@ class Player(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.state = 1
         self.image = pygame.image.load("1.png").convert()
-        self.imagerect = self.image.get_rect()
+        self.rect = self.image.get_rect()
 
 size = width, height = 800, 600 # screen size
 screen = pygame.display.set_mode(size) # sets the screen size
@@ -29,7 +29,7 @@ screen = pygame.display.set_mode(size) # sets the screen size
 btn = button.Button("Testing sizes", 200, 350,400,50) # creates button with text
 btn2 = button.Button("Yay!", 200, 410, 400, 50)
 rocket12 = Player()
-all_sprites_list.add()
+all_sprites_list.add(rocket12)
 while 1:
     mouse = pygame.mouse.get_pos() # gets mouse position for mouseover
     for event in pygame.event.get(): # checks for special events such as quit and click
@@ -53,6 +53,7 @@ while 1:
   #  else:
     #    rocket_state = 0
     #rocket_state = rocket_state + 1
+    all_sprites_list.draw(screen)
     pygame.display.flip() # updates screen
     pygame.display.update()
 
