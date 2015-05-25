@@ -4,14 +4,14 @@ import pygame
 import button
 
 pygame.init()
-size = width, height = 888, 660 # screen size
+size = width, height = 800, 600 # screen size
 screen = pygame.display.set_mode(size) # sets the screen size
 # menu = pygame.image.load("menuart.png").convert() # gets menu code and converts into optimised format
 # logo = pygame.image.load("logo.png").convert() # same for logo
 # logo.set_colorkey(button.BLACK)
 while 1:
     mouse = pygame.mouse.get_pos() # gets mouse position for mouseover
-    btn = button.Button("Testing sizes", 393.5, 450,100,50) # creates button with text
+    btn = button.Button("Testing sizes", 200, 350,400,50) # creates button with text
     for event in pygame.event.get(): # checks for special events such as quit and click
         if event.type == pygame.QUIT: pygame.quit() # if quit event, quit pygame
         elif event.type == pygame.MOUSEBUTTONDOWN: # checks if mouse is clicked
