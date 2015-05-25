@@ -51,6 +51,7 @@ while 1:
                 #game.game()
     # screen.blit(menu, [0,0]) # draws menu on screen
     # screen.blit(logo, [133.5,56.5]) # draws logo on screen
+    screen.fill(button.BLACK)
     btn.draw(mouse, screen) # draws button on screen
     btn2.draw(mouse, screen)
  #if rocket_state <= 25:
