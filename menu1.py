@@ -12,11 +12,18 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.image.load("1.png").convert()
         self.rect = self.image.get_rect()
         self.state = 1
+        self.no = 0
         self.x = 0
     def update(self):
-        self.state = self.state + 1
-        if self.state > 3:
+        self.no = self.no + 1
+        if self.no <= 2:
             self.state = 1
+        elif self.no <= 4:
+            self.state = 2
+        elif self.no <= 6:
+            self.state = 3
+        else:
+            self.no = 0
         self.x = self.rect.x
         self.image = pygame.image.load(str(self.state) + ".png").convert()
         self.rect = self.image.get_rect()
@@ -28,15 +35,6 @@ screen = pygame.display.set_mode(size) # sets the screen size
 # menu = pygame.image.load("menuart.png").convert() # gets menu code and converts into optimised format
 # logo = pygame.image.load("logo.png").convert() # same for logo
 # logo.set_colorkey(button.BLACK)
-#rocket_1 = pygame.image.load("1.png").convert()
-#rocket_1.set_colorkey((255,255,255))
-#rocket_2 = pygame.image.load("2.png").convert()
-#rocket_2.set_colorkey((255,255,255))
-#rocket_3 = pygame.image.load("3.png").convert()
-#rocket_3.set_colorkey((255,255,255))
-#rocket_4 = pygame.image.load("4.png").convert()
-#rocket_4.set_colorkey((255,255,255))
-#rocket_state = 0
 btn = button.Button("Testing sizes", 200, 350,400,50) # creates button with text
 btn2 = button.Button("Yay!", 200, 410, 400, 50)
 rocket12 = Player()
@@ -51,22 +49,9 @@ while 1:
                 #game.game()
     # screen.blit(menu, [0,0]) # draws menu on screen
     # screen.blit(logo, [133.5,56.5]) # draws logo on screen
-    screen.fill(button.BLACK)
+    screen.fill(button.BLACK) #resets screen
     btn.draw(mouse, screen) # draws button on screen
     btn2.draw(mouse, screen)
- #if rocket_state <= 25:
-   #     screen.blit(rocket_1, [0,0])
-#  elif rocket_state <= 50 and rocket_state > 25:
-  #      screen.blit(rocket_2, [50,0])
- #   elif rocket_state <= 75 and rocket_state > 50:
-  #      screen.blit(rocket_3, [100,0])
-   # elif rocket_state <= 100 and rocket_state > 75:
-   #     screen.blit(rocket_4, [150,0])
-  #  else:
-    #    rocket_state = 0
-    #rocket_state = rocket_state + 1
-    all_sprites_list.update()
-    all_sprites_list.draw(screen)
+    all_sprites_list.update() #calls update
+    all_sprites_list.draw(screen) #redraws image
     pygame.display.flip() # updates screen
-
-    #HELLO workld
