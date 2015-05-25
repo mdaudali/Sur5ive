@@ -64,6 +64,5 @@ while 1:
     all_sprites_list.draw(screen)
     all_sprites_list.update()
     pygame.display.flip() # updates screen
-    pygame.display.update()
 
     #HELLO workld
