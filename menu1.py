@@ -6,7 +6,7 @@ pygame.init()
 
 all_sprites_list = pygame.sprite.Group()
 class Player(pygame.sprite.Sprite):
-    def __init__(self, hello):
+    def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.state = 1
         self.image = pygame.image.load("1.png").convert()
@@ -17,18 +17,18 @@ screen = pygame.display.set_mode(size) # sets the screen size
 # menu = pygame.image.load("menuart.png").convert() # gets menu code and converts into optimised format
 # logo = pygame.image.load("logo.png").convert() # same for logo
 # logo.set_colorkey(button.BLACK)
-rocket_1 = pygame.image.load("1.png").convert()
-rocket_1.set_colorkey((255,255,255))
-rocket_2 = pygame.image.load("2.png").convert()
-rocket_2.set_colorkey((255,255,255))
-rocket_3 = pygame.image.load("3.png").convert()
-rocket_3.set_colorkey((255,255,255))
-rocket_4 = pygame.image.load("4.png").convert()
-rocket_4.set_colorkey((255,255,255))
-rocket_state = 0
+#rocket_1 = pygame.image.load("1.png").convert()
+#rocket_1.set_colorkey((255,255,255))
+#rocket_2 = pygame.image.load("2.png").convert()
+#rocket_2.set_colorkey((255,255,255))
+#rocket_3 = pygame.image.load("3.png").convert()
+#rocket_3.set_colorkey((255,255,255))
+#rocket_4 = pygame.image.load("4.png").convert()
+#rocket_4.set_colorkey((255,255,255))
+#rocket_state = 0
 btn = button.Button("Testing sizes", 200, 350,400,50) # creates button with text
-btn2 = button.Button("Yay!", 200, 410, 400, 50
-rocket12 = Player("yo")
+btn2 = button.Button("Yay!", 200, 410, 400, 50)
+rocket12 = Player()
 all_sprites_list.add()
 while 1:
     mouse = pygame.mouse.get_pos() # gets mouse position for mouseover
