@@ -14,7 +14,7 @@ class Player(pygame.sprite.Sprite):
         self.state = 1
         self.no = 0
         self.x = 0
-    def update(self):
+    def update(self, pressed):
         self.no = self.no + 1
         if self.no <= 2:
             self.state = 1
@@ -24,6 +24,14 @@ class Player(pygame.sprite.Sprite):
             self.state = 3
         else:
             self.no = 0
+        if pygame.K_w in pressed:
+            print("w is pressed")
+        if pygame.K_s in pressed:
+            print("s is pressed")
+        if pygame.K_a in pressed:
+            print("a is pressed")
+        if pygame.K_d in pressed:
+            print("d is pressed")
         self.x = self.rect.x
         self.image = pygame.image.load(str(self.state) + ".png").convert()
         self.rect = self.image.get_rect()
@@ -46,12 +54,13 @@ while 1:
         elif event.type == pygame.MOUSEBUTTONDOWN: # checks if mouse is clicked
             if btn.rect.collidepoint(mouse): # checks if mouse is over the button
                 print("button one clicked")
+    pressed = pygame.key.get_pressed()
                 #game.game()
     # screen.blit(menu, [0,0]) # draws menu on screen
     # screen.blit(logo, [133.5,56.5]) # draws logo on screen
     screen.fill(button.BLACK) #resets screen
     btn.draw(mouse, screen) # draws button on screen
     btn2.draw(mouse, screen)
-    all_sprites_list.update() #calls update
+    all_sprites_list.update(pressed) #calls update
     all_sprites_list.draw(screen) #redraws image
     pygame.display.flip() # updates screen
