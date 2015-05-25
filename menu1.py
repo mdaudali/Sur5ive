@@ -9,9 +9,10 @@ screen = pygame.display.set_mode(size) # sets the screen size
 # menu = pygame.image.load("menuart.png").convert() # gets menu code and converts into optimised format
 # logo = pygame.image.load("logo.png").convert() # same for logo
 # logo.set_colorkey(button.BLACK)
+btn = button.Button("Testing sizes", 200, 350,400,50) # creates button with text
+btn2 = button.Button("Yay!", 200, 410, 400, 50 )
 while 1:
     mouse = pygame.mouse.get_pos() # gets mouse position for mouseover
-    btn = button.Button("Testing sizes", 200, 350,400,50) # creates button with text
     for event in pygame.event.get(): # checks for special events such as quit and click
         if event.type == pygame.QUIT: pygame.quit() # if quit event, quit pygame
         elif event.type == pygame.MOUSEBUTTONDOWN: # checks if mouse is clicked
@@ -21,4 +22,5 @@ while 1:
     # screen.blit(menu, [0,0]) # draws menu on screen
     # screen.blit(logo, [133.5,56.5]) # draws logo on screen
     btn.draw(mouse, screen) # draws button on screen
+    btn2.draw(mouse, screen)
     pygame.display.flip() # updates screen

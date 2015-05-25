@@ -4,8 +4,6 @@ BLACK    = (   0,   0,   0)
 WHITE    = ( 255, 255, 255)
 GREEN    = (   0, 255,   0) #defining colours
 RED      = ( 255,   0,   0)
-greeny = 255
-reddy = 0
 class Button(object): #button class
     def __init__(self, text, left, top, width, height):
         self.left = left
@@ -20,23 +18,22 @@ class Button(object): #button class
         self.hover_colour = (RED) #mouse over colour
         self.green = 255
         self.red = 0
+        self.obj = None
     def label(self):
       '''button label font'''
       font = pygame.font.Font(None, 20)
       return font.render(self.text, 1, self.font_colour)
     def colourchooser(self): #checks mouseover state and returns appropriate colour
-        if self.hover and reddy <= 255 and greeny >=0:
-            global reddy
-            global greeny
-            colour = (reddy, greeny, 0)
-            reddy = reddy + 15
-            greeny = greeny - 15
+        if self.hover and self.red <= 255 and self.green >=0:
+            colour = (self.red, self.green, 0)
+            self.red = self.red + 15
+            self.green = self.green - 15
             return colour
-        elif reddy >= 255 and self.hover:
+        elif self.red >= 255 and self.hover:
             return (255,0,0)
         else:
-            reddy = 0
-            greeny = 255
+            self.red = 0
+            self.green = 255
             return self.colour
     def draw(self, mouse, screen2): #draws the rectangle
         rectcoords = (self.left, self.top, self.width, self.height) #puts it into pygame appropriate
