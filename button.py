@@ -27,7 +27,7 @@ class Button(object): #button class
         if self.hover and self.red <= 255 and self.green >=0:
             colour = (self.red, self.green, 0)
             self.red = self.red + 40
-            self.green = self.green - 50
+            self.green = self.green - 40
             return colour
         elif self.red >= 255 and self.hover:
             return (255,0,0)
