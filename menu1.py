@@ -24,3 +24,5 @@ while 1:
     btn.draw(mouse, screen) # draws button on screen
     btn2.draw(mouse, screen)
     pygame.display.flip() # updates screen
+
+    #HELLO
