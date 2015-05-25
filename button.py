@@ -29,8 +29,8 @@ class Button(object): #button class
             global reddy
             global greeny
             colour = (reddy, greeny, 0)
-            reddy = reddy + 20
-            greeny = greeny - 20
+            reddy = reddy + 15
+            greeny = greeny - 15
             return colour
         elif reddy >= 255 and self.hover:
             return (255,0,0)
