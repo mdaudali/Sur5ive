@@ -25,7 +25,7 @@ class Button(object): #button class
       font = pygame.font.Font(None, 20)
       return font.render(self.text, 1, self.font_colour)
     def colourchooser(self): #checks mouseover state and returns appropriate colour
-        if self.hover and self.red != 255:
+        if self.hover and reddy != 255:
             global reddy
             global greeny
             reddy = reddy + 1
