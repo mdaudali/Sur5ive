@@ -24,16 +24,16 @@ class Player(pygame.sprite.Sprite):  # changes the image and can be moved. Use i
         self.x = 0
     def update(self, pressed):
         self.no = self.no + 1
-        if self.no <= 2:
+        if self.no <= 5:
             self.state = 1
-        elif self.no <= 4:
+        elif self.no <= 10:
             self.state = 2
-        elif self.no <= 6:
+        elif self.no <= 15:
             self.state = 3
         else:
             self.no = 0
         self.x = self.rect.x
-        self.image = pygame.image.load(str(self.state) + ".png").convert()
+        self.image = pygame.image.load(str(self.state) + ".png").convert_alpha()
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
