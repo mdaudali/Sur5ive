@@ -22,7 +22,6 @@ class Player(pygame.sprite.Sprite):  # changes the image and can be moved. Use i
         self.state = 1
         self.no = 0
         self.x = 0
-        self.dir = 0
     def update(self, pressed):
         self.no = self.no + 1
         if self.no <= 2:
@@ -38,10 +37,11 @@ class Player(pygame.sprite.Sprite):  # changes the image and can be moved. Use i
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
-        self.image = pygame.transform.rotate(self.image, self.dir)
-        print self.dir
+        self.image = pygame.transform.rotate(self.image, angle)
+        print angle
     def spinLeft(self):
-        self.dir -= 1005
+        global angle
+        angle -= 5
 
 
 
