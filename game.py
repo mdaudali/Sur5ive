@@ -75,16 +75,16 @@ while not done:
     if keys_pressed[pygame.K_w]:
             y -= movespeed
             print "w is pressed"
-    elif keys_pressed[pygame.K_s]:
+    if keys_pressed[pygame.K_s]:
             y += movespeed
             print "s is pressed"
-    elif keys_pressed[pygame.K_a]:
+    if keys_pressed[pygame.K_a]:
             x -= movespeed
             print "a is pressed"
-    elif keys_pressed[pygame.K_d]:
+    if keys_pressed[pygame.K_d]:
             x += movespeed
             print "d is pressed"
-    elif keys_pressed[pygame.K_q]:
+    if keys_pressed[pygame.K_q]:
             player.spinLeft()
             print "q is pressed"
 
