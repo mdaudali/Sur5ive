@@ -33,23 +33,15 @@ class Player(pygame.sprite.Sprite):  # changes the image and can be moved. Use i
             self.state = 3
         else:
             self.no = 0
-        if pygame.K_w in pressed:
-            print("w is pressed")
-        if pygame.K_s in pressed:
-            print("s is pressed")
-        if pygame.K_a in pressed:
-            print("a is pressed")
-        if pygame.K_d in pressed:
-            print("d is pressed")
         self.x = self.rect.x
         self.image = pygame.image.load(str(self.state) + ".png").convert()
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
         self.image = pygame.transform.rotate(self.image, self.dir)
+        print self.dir
     def spinLeft(self):
-        self.dir -= 5
-        self.image = pygame.transform.rotate(self.image, self.dir)
+        self.dir -= 1005
 
 
 
