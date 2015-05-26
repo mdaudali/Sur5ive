@@ -40,6 +40,7 @@ class Player(pygame.sprite.Sprite):
 
 size = width, height = 800, 600 # screen size
 screen = pygame.display.set_mode(size) # sets the screen size
+
 # menu = pygame.image.load("menuart.png").convert() # gets menu code and converts into optimised format
 # logo = pygame.image.load("logo.png").convert() # same for logo
 # logo.set_colorkey(button.BLACK)
