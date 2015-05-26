@@ -28,7 +28,7 @@ while not done:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             print "Click!"
 
-    screen.blit(bg, (0,0))
+    screen.blit(bg, (0, 0))
     all_sprites_list.update()
     all_sprites_list.draw(screen)
     pygame.display.flip()
