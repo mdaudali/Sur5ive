@@ -46,7 +46,7 @@ class Player(pygame.sprite.Sprite):  # changes the image and can be moved. Use i
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
-        self.image = pygame.transform.rotate(screen, self.dir)
+        self.image = pygame.transform.rotate(self.image, self.dir)
     def spinLeft(self, pressed):
         self.dir -= 5
 
