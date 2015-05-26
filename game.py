@@ -38,10 +38,11 @@ class Player(pygame.sprite.Sprite):  # changes the image and can be moved. Use i
         self.rect.x = x
         self.rect.y = y
         self.image = pygame.transform.rotate(self.image, angle)
+        self.image.set_colorkey((0,161,230))
         print angle
     def spinLeft(self):
         global angle
-        angle -= 5
+        angle -= 1
 
 
 
@@ -80,7 +81,7 @@ while not done:
     if keys_pressed[pygame.K_q]:
             player.spinLeft()
             print "q is pressed"
-
+    screen.fill((0,0,0))
     screen.blit(bg, (0, 0))
     all_sprites_list.update(keys_pressed)
     all_sprites_list.draw(screen)
