@@ -37,6 +37,7 @@ class Player(pygame.sprite.Sprite):  # changes the image and can be moved. Use i
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+        self.rect.clamp_ip(screen.get_rect())
         self.image = pygame.transform.rotate(self.image, angle)
         self.image.set_colorkey((0,161,230))
         print angle
@@ -56,7 +57,7 @@ bg = pygame.image.load("placeholder.png").convert()
 player = Player()
 all_sprites_list = pygame.sprite.Group()
 all_sprites_list.add(player)
-movespeed = 1  # Change this variable to alter the movement speed of the player.
+movespeed = 2  # Change this variable to alter the movement speed of the player.
 
 done = False
 while not done:
